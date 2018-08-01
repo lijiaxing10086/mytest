@@ -6,5 +6,10 @@ pipeline {
         sleep 1
       }
     }
+    stage('stage2') {
+      steps {
+        sleep 1
+      }
+    }
   }
 }
