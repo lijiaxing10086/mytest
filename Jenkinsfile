@@ -13,7 +13,7 @@ pipeline {
     }
     stage('git') {
       steps {
-        git(url: 'https://github.com/lijiaxing10086/dbcourses.git', branch: 'branch1', changelog: true, credentialsId: 'lijiaxing10086')
+        git(url: 'https://github.com/lijiaxing10086/dbcourses.git', branch: 'lijiaxing', changelog: true, credentialsId: 'lijiaxing10086')
       }
     }
   }
