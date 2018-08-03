@@ -2,17 +2,17 @@ pipeline {
   agent any
   stages {
     stage('stage1') {
-      parallel {
-        stage('stage1') {
-          steps {
-            sleep 1
-          }
+      steps {
+        sh 'mkdir branch1'
+        sh 'mkdir branch2'
+      }
+    }
+    stage('stage2') {
+      steps {
+        ws(dir: 'branch1') {
+          sh 'pwd'
         }
-        stage('stage2') {
-          steps {
-            sleep 2
-          }
-        }
+        
       }
     }
   }
