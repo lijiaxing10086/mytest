@@ -7,18 +7,19 @@ pipeline {
       }
     }
     stage('stage2') {
-      steps {
-        sleep 1
-      }
-    }
-    stage('git') {
-      steps {
-        git(url: 'https://github.com/lijiaxing10086/dbcourses.git', branch: 'lijiaxing', changelog: true, credentialsId: 'lijiaxing10086')
-      }
-    }
-    stage('run') {
-      steps {
-        build 'mytest'
+      parallel {
+        stage('stage2') {
+          steps {
+            sleep 1
+            sh 'ls'
+          }
+        }
+        stage('aaaa') {
+          steps {
+            sh 'ls '
+            sh 'ls 2'
+          }
+        }
       }
     }
   }
