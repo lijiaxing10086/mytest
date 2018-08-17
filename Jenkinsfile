@@ -16,19 +16,24 @@ pipeline {
               git(url: 'https://github.com/lijiaxing10086/dbcourses.git', branch: 'lijiaxing')
               sh 'ls'
             }
-            
+
             sh 'ls -l'
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             ws(dir: 'branch2') {
               git(url: 'https://github.com/lijiaxing10086/mytest.git', branch: 'master')
               sh 'ls'
             }
-            
+
           }
         }
+      }
+    }
+    stage('') {
+      steps {
+        sleep 1
       }
     }
   }
