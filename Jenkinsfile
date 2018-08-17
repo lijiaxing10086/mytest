@@ -15,6 +15,7 @@ pipeline {
       steps {
         timeout(time: 20) {
           input(message: 'need user admin permission', id: 'test', ok: 'permit', submitter: 'admin', submitterParameter: 'yes')
+          sleep 10
         }
 
       }
