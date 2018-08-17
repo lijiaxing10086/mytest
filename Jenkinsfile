@@ -9,29 +9,19 @@ pipeline {
     }
     stage('stage2') {
       parallel {
-        stage('stage2') {
+        stage('stage2-1') {
           steps {
-            ws(dir: 'branch1') {
-              sh 'pwd'
-              git(url: 'https://github.com/lijiaxing10086/dbcourses.git', branch: 'lijiaxing')
-              sh 'ls'
-            }
-
             sh 'ls -l'
           }
         }
-        stage('error') {
+        stage('stage2-2') {
           steps {
-            ws(dir: 'branch2') {
-              git(url: 'https://github.com/lijiaxing10086/mytest.git', branch: 'master')
-              sh 'ls'
-            }
-
+            sleep 10
           }
         }
       }
     }
-    stage('') {
+    stage('stage3') {
       steps {
         sleep 1
       }
