@@ -13,7 +13,7 @@ pipeline {
       }
       steps {
         echo 'SUCCESS'
-        echo '${params.CHOICES}'
+        echo "${params.CHOICES}"
       }
     }
   }
