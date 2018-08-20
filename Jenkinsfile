@@ -3,11 +3,11 @@ pipeline {
   stages {
     stage('Example') {
       input {
-        message 'Should we continue?'
-        id 'Yes, we should.'
-        submitter 'alice,bob'
+        message 'Who to do it?'
+        id 'Person'
+        submitter 'admin'
         parameters {
-          string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+          choice(name: 'PERSON', choices: ['Bob', 'Tom', 'Me'], description: 'Who should I say hello to?')
         }
       }
       steps {
