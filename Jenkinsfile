@@ -11,14 +11,10 @@ pipeline {
         submitter 'admin'
         parameters {
           string(name: 'PERSON', defaultValue: 'admin', description: 'Who to do it?')
-          string(name: 'PERSON2', defaultValue: 'admin', description: 'Who to do it?')
-          choice(choices: '''Bob
-Tom
-Me''', description: '', name: 'Person')
         }
       }
       steps {
-        echo "Hello, ${PERSON}, nice to meet you."
+        echo "Hello, ${params.PERSON}, nice to meet you."
         sh 'export PERSON=One'
         echo "${PERSON}"
       }
