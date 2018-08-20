@@ -13,11 +13,12 @@ pipeline {
       }
       steps {
         echo 'SUCCESS'
+        echo '${params. choice}'
       }
     }
   }
   environment {
-    PERSON = 'TWO'
+    PERSON = 'One'
   }
   parameters {
     choice(name: 'CHOICES', choices: '''one
