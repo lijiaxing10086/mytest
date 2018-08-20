@@ -2,12 +2,18 @@ pipeline {
   agent any
   stages {
     stage('Example') {
+      environment {
+        TEST = '123'
+      }
       input {
         message 'Who to do it?'
         id 'Person'
         submitter 'admin'
         parameters {
           string(name: 'PERSON', defaultValue: 'admin', description: 'Who to do it?')
+          choice(choices: '''Bob
+Tom
+Me''', description: '', name: 'Person')
         }
       }
       steps {
