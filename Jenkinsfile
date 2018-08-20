@@ -19,4 +19,9 @@ pipeline {
   environment {
     PERSON = 'TWO'
   }
+  parameters {
+    choice(name: 'CHOICES', choices: '''one
+two
+three''', description: '')
+  }
 }
