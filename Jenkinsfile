@@ -10,7 +10,7 @@ pipeline {
     stage('run') {
       when {
         beforeAgent true
-        environment ignoreCase: true, name: 'PERSION', value: 'One'
+        environment ignoreCase: true, name: 'PERSON', value: 'One'
       }
       steps {
         echo 'SUCCESS'
