@@ -9,7 +9,6 @@ pipeline {
     }
     stage('run') {
       when {
-        beforeAgent true
         environment ignoreCase: true, name: 'PERSON', value: 'One'
       }
       steps {
@@ -18,6 +17,6 @@ pipeline {
     }
   }
   environment {
-    PERSON = 'One'
+    PERSON = 'TWO'
   }
 }
