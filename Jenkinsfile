@@ -7,7 +7,9 @@ pipeline {
         id 'Person'
         submitter 'admin'
         parameters {
-          choice(choices: ['Bob', 'Tom', 'Me'], description: '', name: 'Person')
+          choice(choices: '''Bob
+Tom
+Me''', description: '', name: 'Person')
         }
       }
       steps {
