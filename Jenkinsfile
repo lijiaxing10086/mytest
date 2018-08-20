@@ -4,6 +4,7 @@ pipeline {
     stage('Example') {
       steps {
         echo "Hello, ${PERSON}, nice to meet you."
+        input(message: 'go on?', id: 'test', ok: 'yes', submitter: 'admin', submitterParameter: 'test')
       }
     }
     stage('run') {
@@ -15,5 +16,8 @@ pipeline {
         echo 'SUCCESS'
       }
     }
+  }
+  environment {
+    PERSON = 'One'
   }
 }
