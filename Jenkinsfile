@@ -7,7 +7,7 @@ pipeline {
         id 'Person'
         submitter 'admin'
         parameters {
-          booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
+          string(name: 'PERSON', defaultValue: 'admin', description: 'Who to do it?')
         }
       }
       steps {
