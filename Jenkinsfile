@@ -7,7 +7,7 @@ pipeline {
         id 'Person'
         submitter 'admin'
         parameters {
-          choice(name: 'PERSON', choices: ['Bob', 'Tom', 'Me'], description: 'Who should I say hello to?')
+          choice(choices: ['Bob', 'Tom', 'Me'], description: '', name: 'Person')
         }
       }
       steps {
