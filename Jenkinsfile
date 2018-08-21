@@ -14,6 +14,7 @@ pipeline {
         stage('Example-1') {
           steps {
             echo 'echo-1'
+            input(message: 'GO ON?', id: 'TEST', ok: 'YES', submitter: 'admin', submitterParameter: 'test')
           }
         }
         stage('Example-1') {
