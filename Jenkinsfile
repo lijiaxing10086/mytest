@@ -2,14 +2,6 @@ pipeline {
   agent any
   stages {
     stage('Example') {
-      input {
-        message 'Who to do it?'
-        id 'Person'
-        submitter 'admin'
-        parameters {
-          string(name: 'PERSON', defaultValue: 'admin', description: 'Who to do it?')
-        }
-      }
       parallel {
         stage('Example') {
           environment {
