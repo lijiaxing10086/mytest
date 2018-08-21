@@ -1,30 +1,34 @@
 pipeline {
   agent any
   stages {
-    stage('Example-1') {
+    stage('Example') {
+      input {
+        message 'Who to do it?'
+        id 'Person'
+        submitter 'admin'
+        parameters {
+          string(name: 'PERSON', defaultValue: 'admin', description: 'Who to do it?')
+        }
+      }
       parallel {
         stage('Example-1') {
+          environment {
+            TEST = '123'
+          }
           steps {
-            echo 'echo-1'
-            input(message: 'GO ON?', id: 'TEST', ok: 'YES', submitter: 'admin', submitterParameter: 'test')
-            sleep 3
+            echo "Hello, ${params.PERSON}, nice to meet you."
+            sh 'export PERSON=One'
+            echo "${PERSON}"
           }
         }
         stage('Example-2') {
           steps {
-            echo 'echo-2'
-            sleep 4
-          }
-        }
-        stage('Example-3') {
-          steps {
-            echo 'echo-3'
-            sleep 15
+            echo 'echo-1'
           }
         }
       }
     }
-    stage('Example-2') {
+    stage('run') {
       when {
         environment ignoreCase: true, name: 'PERSON', value: 'One'
       }
