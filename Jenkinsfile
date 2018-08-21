@@ -11,7 +11,7 @@ pipeline {
         }
       }
       parallel {
-        stage('Example') {
+        stage('Example-1') {
           environment {
             TEST = '123'
           }
@@ -39,6 +39,6 @@ pipeline {
     }
   }
   environment {
-    PERSON = 'Two'
+    PERSON = 'One'
   }
 }
