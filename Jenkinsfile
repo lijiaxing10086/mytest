@@ -13,7 +13,7 @@ pipeline {
             echo "${PERSON}"
           }
         }
-        stage('Example-2') {
+        stage('Example') {
           steps {
             echo 'echo-1'
           }
