@@ -2,20 +2,11 @@ pipeline {
   agent any
   stages {
     stage('Example') {
-      parallel {
-        stage('Example-1') {
-          steps {
-            echo 'echo-1'
-          }
-        }
-        stage('Example-2') {
-          steps {
-            waitUntil() {
-              sleep 8
-            }
-
-          }
-        }
+      steps {
+        echo "Hello, ${PERSON}, nice to meet you."
+        input(message: 'go on?', id: 'test', ok: 'yes', submitter: 'admin', submitterParameter: 'test')
+        sh '$PERSON=One'
+        echo '${PERSON}'
       }
     }
     stage('run') {
@@ -24,10 +15,16 @@ pipeline {
       }
       steps {
         echo 'SUCCESS'
+        echo "${params.CHOICES[1]}"
       }
     }
   }
   environment {
-    PERSON = 'One'
+    PERSON = 'Two'
+  }
+  parameters {
+    choice(name: 'CHOICES', choices: '''one
+two
+three''', description: '')
   }
 }
