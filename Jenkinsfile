@@ -11,7 +11,7 @@ pipeline {
         }
       }
       parallel {
-        stage('Example-1') {
+        stage('Example') {
           environment {
             TEST = '123'
           }
