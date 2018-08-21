@@ -34,7 +34,6 @@ pipeline {
       }
       steps {
         echo 'SUCCESS'
-        echo "${params.CHOICES[1]}"
       }
     }
   }
