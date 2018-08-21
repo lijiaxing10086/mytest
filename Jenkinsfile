@@ -5,8 +5,6 @@ pipeline {
       steps {
         echo "Hello, ${PERSON}, nice to meet you."
         input(message: 'go on?', id: 'test', ok: 'yes', submitter: 'admin', submitterParameter: 'test')
-        sh '$PERSON=One'
-        echo '${PERSON}'
       }
     }
     stage('run') {
@@ -15,7 +13,6 @@ pipeline {
       }
       steps {
         echo 'SUCCESS'
-        echo "${params.CHOICES[1]}"
       }
     }
   }
