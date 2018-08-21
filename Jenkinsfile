@@ -15,16 +15,19 @@ pipeline {
           steps {
             echo 'echo-1'
             input(message: 'GO ON?', id: 'TEST', ok: 'YES', submitter: 'admin', submitterParameter: 'test')
+            sleep 3
           }
         }
         stage('Example-1') {
           steps {
             echo 'echo-2'
+            sleep 4
           }
         }
         stage('Example-1') {
           steps {
             echo 'echo-3'
+            sleep 5
           }
         }
       }
