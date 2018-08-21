@@ -10,13 +10,13 @@ pipeline {
             sleep 3
           }
         }
-        stage('Example-1') {
+        stage('Example-2') {
           steps {
             echo 'echo-2'
             sleep 4
           }
         }
-        stage('Example-1') {
+        stage('Example-3') {
           steps {
             echo 'echo-3'
             sleep 15
