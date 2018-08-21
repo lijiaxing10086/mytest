@@ -13,6 +13,11 @@ pipeline {
             echo 'echo-2'
           }
         }
+        stage('Example-1') {
+          steps {
+            echo 'echo-3'
+          }
+        }
       }
     }
     stage('Example-2') {
