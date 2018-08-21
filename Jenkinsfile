@@ -9,7 +9,7 @@ pipeline {
           }
           steps {
             echo "Hello, ${params.PERSON}, nice to meet you."
-            sh 'export PERSON=One'
+            sleep 20
             echo "${PERSON}"
           }
         }
