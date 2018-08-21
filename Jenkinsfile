@@ -3,25 +3,14 @@ pipeline {
   stages {
     stage('Example') {
       steps {
-        echo "Hello, ${PERSON}, nice to meet you."
         input(message: 'go on?', id: 'test', ok: 'yes', submitter: 'admin', submitterParameter: 'test')
+        echo "${EXECUTOR_NUMBER}"
       }
     }
     stage('run') {
-      when {
-        environment ignoreCase: true, name: 'PERSON', value: 'One'
-      }
       steps {
         echo 'SUCCESS'
       }
     }
-  }
-  environment {
-    PERSON = 'Two'
-  }
-  parameters {
-    choice(name: 'CHOICES', choices: '''one
-two
-three''', description: '')
   }
 }
