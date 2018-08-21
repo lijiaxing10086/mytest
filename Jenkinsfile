@@ -4,8 +4,8 @@ pipeline {
     stage('Example') {
       steps {
         input(message: 'go on?', id: 'test', ok: 'yes', submitter: 'admin', submitterParameter: 'test')
-        echo "${GIT_COMMIT}"
-        echo "${GIT_URL}"
+        echo "${computer.name}"
+        echo "${computer.jnlpmac} "
         echo "${GIT_BRANCH}"
       }
     }
