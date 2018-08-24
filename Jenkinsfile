@@ -11,6 +11,7 @@ pipeline {
         stage('stage-2') {
           steps {
             echo '123'
+            sh 'ls -2'
           }
         }
       }
