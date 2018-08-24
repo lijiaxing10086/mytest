@@ -2,16 +2,22 @@ pipeline {
   agent any
   stages {
     stage('Example') {
-      steps {
-        input(message: 'go on?', id: 'test', ok: 'yes', submitter: 'admin', submitterParameter: 'test')
-        echo "${computer.name}"
-        echo "${computer.jnlpmac} "
-        echo "${GIT_BRANCH}"
+      parallel {
+        stage('stage-1') {
+          steps {
+            echo 'SUCCESS'
+          }
+        }
+        stage('stage-2') {
+          steps {
+            echo '123'
+          }
+        }
       }
     }
-    stage('run') {
+    stage('stage-2') {
       steps {
-        echo 'SUCCESS'
+        echo '456'
       }
     }
   }
