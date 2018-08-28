@@ -19,5 +19,10 @@ pipeline {
         }
       }
     }
+    stage('stage2') {
+      steps {
+        sleep 10
+      }
+    }
   }
 }
