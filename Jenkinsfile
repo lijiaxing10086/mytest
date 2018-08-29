@@ -35,7 +35,7 @@ ls -l'''
         echo '456'
         dir(path: '/test1') {
           sh '''pwd
-touch testfile1
+touch testfile2
 ls -l
 cd ..
 ls -l'''
