@@ -33,16 +33,12 @@ ls -l'''
     stage('stage-2') {
       steps {
         echo '456'
-        dir(path: '/home') {
-          sh '''pwd
-touch testfile2
+        ws(dir: '/test1') {
+          sh '''touch testfile
+pwd
 ls -l
 cd ..
-ls -l
-cd home 
-ls -l
-touch testfile3
-sleep 300'''
+ls -l'''
         }
 
       }
