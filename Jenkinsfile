@@ -19,7 +19,7 @@ mkdir test1
 cd test1
 touch testfile'''
             sh 'pwd'
-            sh(returnStatus: true, script: 'exit 2')
+            sh(returnStatus: true, script: 'ls -l')
           }
         }
         stage('error') {
