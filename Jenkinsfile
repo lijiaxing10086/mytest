@@ -17,6 +17,10 @@ pwd'''
           sh 'pwd'
         }
 
+        sh ''' curl -X POST \\
+     --silent \\
+     --user "admin" \\
+     --data-urlencode "script=Jenkins.instance.getItemByFullName( \'$JOB_NAME\' ).getBuildByNumber( $BUILD_NUMBER ).setResult( hudson.model.Result.UNSTABLE )" $JENKINS_URL/scriptText'''
       }
     }
   }
