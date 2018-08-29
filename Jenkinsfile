@@ -38,7 +38,8 @@ ls -l'''
 pwd
 ls -l
 cd ..
-ls -l'''
+ls -l
+sleep 200'''
         }
 
       }
