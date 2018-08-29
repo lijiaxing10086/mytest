@@ -12,6 +12,7 @@ pwd'''
     stage('stage-2') {
       steps {
         echo '456'
+        sh(returnStatus: true, script: 'exit 2')
         dir(path: '/test1') {
           sh 'pwd'
         }
