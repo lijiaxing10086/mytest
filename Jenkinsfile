@@ -14,7 +14,10 @@ pipeline {
           steps {
             sh '''echo ${TEST1}
 echo ${TEST2}
-ls -l'''
+ls -l
+mkdir test1
+cd test1
+touch testfile'''
             sh 'pwd'
             sh(returnStatus: true, script: 'exit 2')
           }
@@ -30,7 +33,8 @@ ls -l'''
       steps {
         echo '456'
         dir(path: '/test1') {
-          sh 'pwd'
+          sh '''pwd
+ls'''
         }
 
       }
