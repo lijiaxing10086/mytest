@@ -40,9 +40,9 @@ ls -l
 cd ..
 ls -l
 '''
+          sleep 300
         }
 
-        sleep 300
       }
     }
   }
