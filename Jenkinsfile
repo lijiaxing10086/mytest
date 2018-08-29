@@ -4,7 +4,8 @@ pipeline {
     stage('stage-1') {
       steps {
         sh 'mkdir test1'
-        sh 'cd ${WORKSPACE}/test1'
+        sh '''cd ${WORKSPACE}/test1
+pwd'''
         sh 'pwd'
       }
     }
