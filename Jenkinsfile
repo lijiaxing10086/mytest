@@ -33,9 +33,10 @@ ls -l'''
     stage('stage-2') {
       steps {
         echo '456'
-        dir(path: '/test1@temp') {
+        dir(path: '/test1') {
           sh '''pwd
-ls
+touch testfile1
+ls -2
 cd ..
 ls -l'''
         }
