@@ -2,8 +2,12 @@ pipeline {
   agent any
   stages {
     stage('stage-1') {
+      environment {
+        TEST2 = 'test2'
+      }
       steps {
-        sh 'mkdir test1'
+        sh '''echo ${TEST1}
+echo ${TEST2}'''
         sh '''cd ${WORKSPACE}/test1
 pwd'''
         sh 'pwd'
@@ -20,5 +24,8 @@ pwd'''
         error '2'
       }
     }
+  }
+  environment {
+    TEST1 = 'test1'
   }
 }
