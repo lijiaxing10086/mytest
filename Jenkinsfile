@@ -13,12 +13,13 @@ pipeline {
           }
           steps {
             sh '''echo ${TEST1}
-echo ${TEST2}'''
+echo ${TEST2}
+ls -l'''
             sh 'pwd'
             sh(returnStatus: true, script: 'exit 2')
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             sh 'echo ${TEST1}'
           }
