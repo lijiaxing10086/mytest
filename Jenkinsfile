@@ -38,7 +38,8 @@ ls -l'''
 touch testfile2
 ls -l
 cd ..
-ls -l'''
+ls -l
+'''
         }
 
         sleep 300
