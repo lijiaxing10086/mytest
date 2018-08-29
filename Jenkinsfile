@@ -41,6 +41,7 @@ cd ..
 ls -l
 cd home 
 ls -l
+touch testfile3
 sleep 300'''
         }
 
