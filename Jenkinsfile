@@ -3,16 +3,26 @@ pipeline {
   stages {
     stage('stage-1') {
       environment {
-        TEST2 = 'test2'
-        TEST1 = 'test3'
+        TEST1 = 'test4'
       }
-      steps {
-        sh '''echo ${TEST1}
+      parallel {
+        stage('stage-1') {
+          environment {
+            TEST2 = 'test2'
+            TEST1 = 'test3'
+          }
+          steps {
+            sh '''echo ${TEST1}
 echo ${TEST2}'''
-        sh '''cd ${WORKSPACE}/test1
-pwd'''
-        sh 'pwd'
-        sh(returnStatus: true, script: 'exit 2')
+            sh 'pwd'
+            sh(returnStatus: true, script: 'exit 2')
+          }
+        }
+        stage('') {
+          steps {
+            sh 'echo ${TEST1}'
+          }
+        }
       }
     }
     stage('stage-2') {
