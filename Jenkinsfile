@@ -4,6 +4,7 @@ pipeline {
     stage('stage-1') {
       environment {
         TEST2 = 'test2'
+        TEST1 = 'test3'
       }
       steps {
         sh '''echo ${TEST1}
@@ -21,7 +22,6 @@ pwd'''
           sh 'pwd'
         }
 
-        error '2'
       }
     }
   }
