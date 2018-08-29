@@ -36,7 +36,7 @@ ls -l'''
         dir(path: '/test1') {
           sh '''pwd
 touch testfile1
-ls -2
+ls -l
 cd ..
 ls -l'''
         }
