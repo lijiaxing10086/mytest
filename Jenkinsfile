@@ -17,7 +17,8 @@ echo ${TEST2}
 ls -l
 mkdir test1
 cd test1
-touch testfile'''
+touch testfile
+ls -l'''
             sh 'pwd'
             sh(returnStatus: true, script: 'ls -l')
           }
@@ -34,7 +35,9 @@ touch testfile'''
         echo '456'
         dir(path: '/test1') {
           sh '''pwd
-ls'''
+ls
+cd ..
+ls -l'''
         }
 
       }
