@@ -13,16 +13,18 @@ pipeline {
           }
           steps {
             sh '''echo ${WORKSPACE}
-echo \'Hello ${params.PERSON}\'
+
 echo ${TEST2}
 '''
             sh 'pwd'
             sh(returnStatus: true, script: 'ls -l')
+            echo 'Hello ${params.PERSON}'
           }
         }
         stage('stage-1-2') {
           steps {
             sh 'echo ${TEST1}'
+            sh 'echo "Hello ${params.PERSON}"'
           }
         }
       }
