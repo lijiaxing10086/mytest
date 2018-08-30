@@ -27,6 +27,10 @@ pwd'''
           sh 'touch testfilels123'
         }
 
+      }
+    }
+    stage('test-3') {
+      steps {
         sh '''cd test1
 ls -l'''
       }
