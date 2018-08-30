@@ -18,7 +18,7 @@ echo ${TEST2}
 '''
             sh 'pwd'
             sh(returnStatus: true, script: 'ls -l')
-            echo 'Hello ${params.PERSON}'
+            echo "Hello ${params.PERSON}"
           }
         }
         stage('stage-1-2') {
