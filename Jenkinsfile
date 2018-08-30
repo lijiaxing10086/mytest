@@ -15,7 +15,7 @@ cd test
 ls -l'''
         sh '''ls -l
 cd ..
-cd /{WORKSPACE}/test
+cd ${WORKSPACE}/test
 ls -l'''
       }
     }
