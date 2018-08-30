@@ -21,7 +21,7 @@ ls -l'''
     }
     stage('ls -2') {
       steps {
-        dir(path: 'test') {
+        dir(path: 'test1') {
           sh '''ls -l
 pwd'''
         }
