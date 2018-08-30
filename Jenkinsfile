@@ -13,7 +13,7 @@ pipeline {
           }
           steps {
             sh '''echo ${WORKSPACE}
-  echo "Hello ${params.PERSON}"
+echo \'Hello ${params.PERSON}\'
 echo ${TEST2}
 '''
             sh 'pwd'
