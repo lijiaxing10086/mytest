@@ -21,15 +21,8 @@ ls -l'''
     }
     stage('ls -2') {
       steps {
-        dir(path: '/home') {
+        dir(path: '${WORKSPACE}/test') {
           sh 'ls -l'
-          sh '''cd jenkins
-ls -l
-'''
-          sh '''cd jenkins/workspace/
-ls -l
-cd test
-ls -l'''
         }
 
       }
