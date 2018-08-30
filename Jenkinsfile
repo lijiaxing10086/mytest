@@ -21,9 +21,10 @@ ls -l'''
     }
     stage('ls -2') {
       steps {
-        ws(dir: 'test1') {
+        ws(dir: 'test') {
           sh '''ls -l
-cd ..'''
+cd ..
+ls -l'''
         }
 
       }
