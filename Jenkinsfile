@@ -22,9 +22,10 @@ ls -l'''
     stage('ls -2') {
       steps {
         dir(path: '/home') {
-          sh '''ls -l
+          sh '''cd ..
+ls -l
 pwd
-cd jenkins/workspace/Whentest_master-ZU6DVJQ4JFAPVEHQI5O7A4H5I6PRR6I3XUX3J7XNZOJXCY7K44PA/
+cd home/jenkins/workspace/Whentest_master-ZU6DVJQ4JFAPVEHQI5O7A4H5I6PRR6I3XUX3J7XNZOJXCY7K44PA/
 ls -l'''
           sh 'touch testfilels123'
         }
