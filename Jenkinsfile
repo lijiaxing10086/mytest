@@ -10,7 +10,6 @@ pipeline {
           environment {
             TEST2 = 'test2'
             TEST1 = 'test3'
-            WORKSPACE = '123'
           }
           steps {
             sh '''echo ${WORKSPACE}
@@ -43,6 +42,7 @@ pwd
   }
   environment {
     TEST1 = 'test1'
+    WORKSPACE = 'mydir'
   }
   parameters {
     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
