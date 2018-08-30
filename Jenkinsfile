@@ -25,7 +25,8 @@ ls -l'''
           sh '''pwd
 ls -l
 cd ..
-ls -l'''
+ls -l
+echo "${WORKSPACE}"'''
         }
 
       }
