@@ -31,12 +31,6 @@ ls -l'''
 
       }
     }
-    stage('test-3') {
-      steps {
-        sh '''cd test1
-ls -l'''
-      }
-    }
   }
   environment {
     TEST1 = 'test1'
