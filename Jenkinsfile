@@ -21,7 +21,7 @@ ls -l'''
     }
     stage('ls -2') {
       steps {
-        dir(path: '${WORKSPACE}/test') {
+        dir(path: '/test') {
           sh '''ls -l
 pwd'''
         }
