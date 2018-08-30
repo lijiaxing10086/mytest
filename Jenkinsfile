@@ -24,6 +24,10 @@ ls -l'''
         dir(path: 'test1') {
           sh '''ls -l
 pwd'''
+          sh '''cd ..
+ls -l
+cd ..
+ls -l'''
         }
 
         sh '''pwd
