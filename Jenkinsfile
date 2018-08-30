@@ -23,8 +23,7 @@ echo ${TEST2}
         }
         stage('stage-1-2') {
           steps {
-            sh 'echo ${TEST1}'
-            sh 'echo Hello ${params.PERSON}'
+            sh 'echo "${params.PERSON}"'
           }
         }
       }
