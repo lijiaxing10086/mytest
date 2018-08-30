@@ -23,7 +23,7 @@ echo ${TEST2}
         }
         stage('stage-1-2') {
           steps {
-            sh 'echo "${PERSON}"'
+            sh '${PERSON}'
           }
         }
       }
@@ -42,7 +42,6 @@ pwd
   }
   environment {
     TEST1 = 'test1'
-    PERSON = 'lllJJJ'
   }
   parameters {
     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
