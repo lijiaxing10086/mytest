@@ -10,9 +10,12 @@ touch testfile'''
     }
     stage('ls -1') {
       steps {
-        sh '''cd test
+        sh '''ls -l
+cd test
 ls -l'''
-        sh '''cd {WORKSPACE}/test
+        sh '''ls -l
+cd ..
+cd {WORKSPACE}/test
 ls -l'''
       }
     }
