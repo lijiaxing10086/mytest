@@ -1,40 +1,32 @@
 pipeline {
   agent any
   stages {
-    stage('stage-1') {
-      environment {
-        TEST1 = 'test4'
-      }
-      parallel {
-        stage('stage-1-1') {
-          environment {
-            TEST2 = 'test2'
-            TEST1 = 'test3'
-          }
-          steps {
-            sh '''echo ${WORKSPACE}
-
-echo ${TEST2}
-'''
-            sh 'pwd'
-            sh(returnStatus: true, script: 'ls -l')
-            echo "Hello ${params.PERSON}"
-          }
-        }
-        stage('stage-1-2') {
-          steps {
-            sh 'echo "${PERSON}"'
-          }
-        }
+    stage('dir') {
+      steps {
+        sh '''mkdir test
+cd test 
+touch testfile'''
       }
     }
-    stage('stage-2') {
+    stage('ls -1') {
       steps {
-        echo '456'
-        ws(dir: '/test1') {
-          sh '''touch testfile
-pwd
+        sh '''cd test
+ls -l'''
+        sh '''cd {WORKSPACE}/test
+ls -l'''
+      }
+    }
+    stage('ls -2') {
+      steps {
+        dir(path: '/home') {
+          sh 'ls -l'
+          sh '''cd jenkins
+ls -l
 '''
+          sh '''cd jenkins/workspace/
+ls -l
+cd test
+ls -l'''
         }
 
       }
@@ -42,7 +34,6 @@ pwd
   }
   environment {
     TEST1 = 'test1'
-    WORKSPACE = 'mydir'
   }
   parameters {
     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
