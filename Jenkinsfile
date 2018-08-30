@@ -10,6 +10,7 @@ pipeline {
           environment {
             TEST2 = 'test2'
             TEST1 = 'test3'
+            WORKSPACE = '123'
           }
           steps {
             sh '''echo ${WORKSPACE}
