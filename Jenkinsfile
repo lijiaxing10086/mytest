@@ -6,24 +6,21 @@ pipeline {
         TEST1 = 'test4'
       }
       parallel {
-        stage('stage-1') {
+        stage('stage-1-1') {
           environment {
             TEST2 = 'test2'
             TEST1 = 'test3'
           }
           steps {
-            sh '''echo ${TEST1}
+            sh '''echo ${WORKSPACE}
+  echo "Hello ${params.PERSON}"
 echo ${TEST2}
-ls -l
-mkdir test1
-cd test1
-touch testfile
-ls -l'''
+'''
             sh 'pwd'
             sh(returnStatus: true, script: 'ls -l')
           }
         }
-        stage('error') {
+        stage('stage-1-2') {
           steps {
             sh 'echo ${TEST1}'
           }
@@ -36,10 +33,7 @@ ls -l'''
         ws(dir: '/test1') {
           sh '''touch testfile
 pwd
-ls -l
-cd ..
-ls -l
-sleep 200'''
+'''
         }
 
       }
@@ -47,5 +41,8 @@ sleep 200'''
   }
   environment {
     TEST1 = 'test1'
+  }
+  parameters {
+    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
   }
 }
