@@ -21,7 +21,7 @@ ls -l'''
     }
     stage('ls -2') {
       steps {
-        ws(dir: 'workspace') {
+        ws(dir: '/test') {
           sh '''pwd
 ls -l
 cd ..
