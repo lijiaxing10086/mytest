@@ -4,7 +4,7 @@ pipeline {
     stage('dir') {
       steps {
         sh '''mkdir test
-touch testfile'''
+touch 123456testfile'''
         sleep 60
       }
     }
@@ -12,6 +12,10 @@ touch testfile'''
       steps {
         sh 'ls -l'
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '84a80b45-4deb-4847-ac7b-44afdae9c313', url: 'http://192.168.1.52/Bonobo.Git.Server/Mytest.git']]])
+        sh '''ls -l
+pwd
+sleep 60'''
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '84a80b45-4deb-4847-ac7b-44afdae9c313', url: 'http://192.168.1.52/Bonobo.Git.Server/Mygittest.git']]])
         sh '''ls -l
 pwd
 sleep 60'''
